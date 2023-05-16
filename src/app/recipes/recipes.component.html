@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-5">
+            <app-recipe-card 
+                *ngFor="let recipe of recipesList"
+                [name]="recipe.name"
+                [description]="recipe.description"
+                [image]="recipe.image"
+                (click)="onClick(recipe)"
+                ></app-recipe-card>
+        </div>
+        <div class="col-12 col-md-7">
+           <app-recipe-detail
+            [name]="selectedRecipe.name"
+            [description]="selectedRecipe.description"
+            [image]="selectedRecipe.image"
+            [list]="selectedRecipe.list"
+            (itemEmitter)="onItemEmitted($event)"
+            ></app-recipe-detail>
+        </div>
+    </div>
+</div>

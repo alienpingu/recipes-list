@@ -1,0 +1,12 @@
+<app-topbar (featureSelected)="onSelect($event)"></app-topbar>
+<app-recipes *ngIf="featureWasSelected==='recipes'" (itemEmitter)="onItemEmitted($event)"></app-recipes>
+<app-shopping-list *ngIf="featureWasSelected!=='recipes'" [list]="list"></app-shopping-list>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+

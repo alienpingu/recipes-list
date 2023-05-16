@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Add new Item:</h2>
+    <div class="input-group">
+        <span class="input-group-text" id="ba1" style="width: 5rem;">Name</span>
+        <input type="text" class="form-control" placeholder="Apple" aria-label="name" aria-describedby="ba1" #nameInput>
+    </div>
+    <div class="input-group">
+        <span class="input-group-text" id="ba2" style="width: 5rem;">Amount</span>
+        <input type="number" class="form-control" placeholder="1" aria-label="amount" aria-describedby="ba2"
+            #amountInput>
+    </div>
+    <div class="btn-group w-100" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-outline-success"
+            (click)="onAdd(nameInput.value, +amountInput.value)">Add</button>
+        <button type="button" class="btn btn-outline-primary"
+            (click)="nameInput.value='';amountInput.value=''">Clear</button>
+    </div>
+    <hr>
+    <ul *ngIf="list.length>0 else textBlock" class="list-group">
+        <app-item-list *ngFor="let item of list" [name]="item.name" [amount]="item.amount"></app-item-list>
+    </ul>
+    <ng-template #textBlock>
+        <p>Please add an item to the shopping list</p>
+    </ng-template>
+</div>
